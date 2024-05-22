@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+    <meta charset="utf-8">
+    <title>Mini Data Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<h2>Mini Data Catalog</h2>
+    <div class="container">
+        <h1>Mini Data Catalog</h1>
+        <ul>
+            {% for table in tables %}
+                <li>{{ table }}</li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('add_table') }}" method="post">
+            <input type="text" name="table_name" placeholder="New table name" required>
+            <button type="submit">Add Table</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ table_name }}</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            {% for key in data[0].keys() %}
+            <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for value in row.values() %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('home') }}" class="btn btn-primary">Back to Home</a>
+{% endblock %}
