@@ -5,5 +5,6 @@ A simple small app with flask.
 
 ### Components
 * flask
+* mysql
 * gunicorn
 * docker
