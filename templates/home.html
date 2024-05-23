@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='app_icon.png') }}" type="image/x-icon">
-
 </head>
 <body>
     <div class="container">
@@ -20,15 +19,25 @@
             </ul>
         </div>
         <div class="form-container">
+            <button id="openAddTableModal"><i class="fas fa-plus"></i> Add Table</button>
+        </div>
+    </div>
+
+    <!-- Add Table Modal Dialog -->
+    <div id="addTableModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
             <h2>Add New Table</h2>
-            <form action="{{ url_for('add_table') }}" method="post">
-                <input type="text" name="table_name" placeholder="New table name" required>
+            <form id="addTableForm" action="{{ url_for('add_table') }}" method="post">
+                <input type="text" name="table_name" placeholder="Table Name" required>
+                <input type="text" name="database_name" placeholder="Database Name" required>
+                <textarea name="description" placeholder="Description" required></textarea>
                 <button type="submit"><i class="fas fa-plus"></i> Add Table</button>
             </form>
         </div>
     </div>
 
-    <!-- Modal Dialog -->
+    <!-- Table Details Modal Dialog -->
     <div id="tableModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>

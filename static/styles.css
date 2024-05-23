@@ -60,14 +60,16 @@ h2 {
     background-color: #d0e7ff;
 }
 
-.form-container form {
+.form-container form,
+.modal-content form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     padding: 10px;
     width: 80%;
     margin: 10px 0;
@@ -75,6 +77,11 @@ input[type="text"] {
     border-radius: 4px;
     font-size: 16px;
     background-color: #f4faff;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
 }
 
 button {
@@ -95,6 +102,11 @@ button i {
 
 button:hover {
     background-color: #003366;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
 }
 
 /* Modal Styles */
