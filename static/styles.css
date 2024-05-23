@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e9f2fa;
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,11 +19,11 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #000000;
 }
 
 h2 {
-    color: #555;
+    color: #003366;
     margin-top: 20px;
 }
 
@@ -35,19 +35,20 @@ h2 {
     list-style: none;
     padding: 0;
     margin: 0;
-    border: 1px solid #ddd;
+    border: 1px solid #cce0ff;
     border-radius: 8px;
     max-height: 300px;
     overflow-y: auto;
     margin: 0 auto;
     text-align: left;
+    background-color: #f4faff;
 }
 
 .table-list li {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    background: #f9f9f9;
-    color: #333;
+    border-bottom: 1px solid #cce0ff;
+    background: #e9f2fa;
+    color: #003366;
 }
 
 .table-list li:last-child {
@@ -65,16 +66,17 @@ input[type="text"] {
     padding: 10px;
     width: 80%;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #cce0ff;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #f4faff;
 }
 
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #28a745;
+    background-color: #0056b3;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -87,5 +89,5 @@ button i {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #003366;
 }
