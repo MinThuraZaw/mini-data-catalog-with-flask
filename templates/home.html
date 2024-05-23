@@ -4,19 +4,26 @@
     <meta charset="utf-8">
     <title>Mini Data Catalog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>Mini Data Catalog</h1>
-        <ul>
-            {% for table in tables %}
-                <li>{{ table }}</li>
-            {% endfor %}
-        </ul>
-        <form action="{{ url_for('add_table') }}" method="post">
-            <input type="text" name="table_name" placeholder="New table name" required>
-            <button type="submit">Add Table</button>
-        </form>
+        <div class="table-container">
+            <h2>Tables</h2>
+            <ul class="table-list">
+                {% for table in tables %}
+                    <li>{{ table }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="form-container">
+            <h2>Add New Table</h2>
+            <form action="{{ url_for('add_table') }}" method="post">
+                <input type="text" name="table_name" placeholder="New table name" required>
+                <button type="submit"><i class="fas fa-plus"></i> Add Table</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
