@@ -13,7 +13,7 @@
             <h2>Tables</h2>
             <ul class="table-list">
                 {% for table in tables %}
-                    <li>{{ table }}</li>
+                    <li class="table-item" data-table-name="{{ table }}">{{ table }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -25,5 +25,16 @@
             </form>
         </div>
     </div>
+
+    <!-- Modal Dialog -->
+    <div id="tableModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Table Details</h2>
+            <p id="tableDetails"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
