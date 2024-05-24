@@ -31,17 +31,18 @@ h2 {
     margin: 20px 0;
 }
 
+.table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #cce0ff;
+    border-radius: 8px;
+    background-color: #f4faff;
+}
+
 .table-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    border: 1px solid #cce0ff;
-    border-radius: 8px;
-    max-height: 300px;
-    overflow-y: auto;
-    margin: 0 auto;
-    text-align: left;
-    background-color: #f4faff;
 }
 
 .table-list li {

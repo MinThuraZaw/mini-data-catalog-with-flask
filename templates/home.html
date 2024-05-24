@@ -10,8 +10,9 @@
 <body>
     <div class="container">
         <h1>Mini Data Catalog</h1>
+        <h2>Tables</h2>
         <div class="table-container">
-            <h2>Tables</h2>
+
             <ul class="table-list">
                 {% for table in tables %}
                     <li class="table-item" data-table-name="{{ table }}">{{ table }}</li>
