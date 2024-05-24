@@ -7,31 +7,35 @@ app = Flask(__name__)
 DATA_FILE = 'data/tables.json'
 
 
-def load_tables():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r') as file:
-            return json.load(file)
-    return []
+# Function to read tables from JSON file
+def read_tables():
+    with open(DATA_FILE, 'r') as f:
+        tables = json.load(f)
+    return tables
 
 
-def save_tables(tables):
-    with open(DATA_FILE, 'w') as file:
-        json.dump(tables, file)
+# Function to write tables to JSON file
+def write_tables(tables):
+    with open(DATA_FILE, 'w') as f:
+        json.dump(tables, f, indent=4)
 
 
 @app.route('/')
 def home():
-    tables = load_tables()
+    tables = read_tables()
     return render_template('home.html', tables=tables)
 
 
 @app.route('/add_table', methods=['POST'])
 def add_table():
-    new_table_name = request.form['table_name']
-    tables = load_tables()
-    if new_table_name and new_table_name not in tables:
-        tables.append(new_table_name)
-        save_tables(tables)
+    new_table = {
+        "table_name": request.form['table_name'],
+        "database_name": request.form['database_name'],
+        "description": request.form['description']
+    }
+    tables = read_tables()
+    tables.append(new_table)
+    write_tables(tables)
     return redirect(url_for('home'))
 
 
