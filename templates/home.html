@@ -16,7 +16,7 @@
                     <tr>
                         <th>Table Name</th>
                         <th>Database Name</th>
-                        <th>Actions</th>
+                        <th class="actions-column">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,8 +24,13 @@
                         <tr class="table-item" data-table-name="{{ table.table_name }}" data-database-name="{{ table.database_name }}" data-description="{{ table.description }}">
                             <td>{{ table.table_name }}</td>
                             <td>{{ table.database_name }}</td>
-                            <td>
-                                <button class="delete-btn" data-table-name="{{ table.table_name }}">Delete</button>
+                            <td class="actions-column">
+                                <div class="dropdown">
+                                    <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-content">
+                                        <a href="#" class="delete-btn" data-table-name="{{ table.table_name }}">Delete</a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     {% endfor %}

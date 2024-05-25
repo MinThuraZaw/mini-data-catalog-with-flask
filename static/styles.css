@@ -56,23 +56,14 @@ h1 {
     color: #fff;
 }
 
+.actions-column {
+    width: 70px;
+    text-align: center;
+}
+
 .table-item:hover {
     background-color: #d0e7ff;
     cursor: pointer;
-}
-
-.delete-btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #ff4d4d;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #cc0000;
 }
 
 .form-container form,
@@ -122,6 +113,53 @@ button:hover {
 .form-container {
     display: flex;
     justify-content: center;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #003366;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Modal Styles */

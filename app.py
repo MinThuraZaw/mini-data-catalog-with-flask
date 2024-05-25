@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify
 import os
 import json
 
@@ -35,6 +35,16 @@ def add_table():
     tables.append(new_table)
     write_tables(tables)
     return redirect(url_for('home'))
+
+
+@app.route('/delete_table', methods=['POST'])
+def delete_table():
+    data = request.get_json()
+    table_name = data['table_name']
+    tables = read_tables()
+    tables = [table for table in tables if table['table_name'] != table_name]
+    write_tables(tables)
+    return jsonify({"message": "Table deleted successfully"}), 200
 
 
 if __name__ == '__main__':
