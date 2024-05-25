@@ -13,5 +13,10 @@
         "table_name": "erer",
         "database_name": "erer",
         "description": "ererer"
+    },
+    {
+        "table_name": "eee",
+        "database_name": "eee",
+        "description": "eee"
     }
 ]
