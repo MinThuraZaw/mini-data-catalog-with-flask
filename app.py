@@ -7,14 +7,12 @@ app = Flask(__name__)
 DATA_FILE = 'data/tables.json'
 
 
-# Function to read tables from JSON file
 def read_tables():
     with open(DATA_FILE, 'r') as f:
         tables = json.load(f)
     return tables
 
 
-# Function to write tables to JSON file
 def write_tables(tables):
     with open(DATA_FILE, 'w') as f:
         json.dump(tables, f, indent=4)
