@@ -1,27 +1,27 @@
 [
     {
-        "table_name": "users",
         "database_name": "app_db",
-        "description": "User information table"
+        "description": "User information table",
+        "table_name": "users"
     },
     {
-        "table_name": "test",
-        "database_name": "test",
-        "description": "eee"
-    },
-    {
-        "table_name": "sale",
         "database_name": "pos",
-        "description": "sales"
+        "description": "sales",
+        "table_name": "sale"
     },
     {
-        "table_name": "items",
         "database_name": "pos",
-        "description": "test"
+        "description": "test",
+        "table_name": "items"
     },
     {
-        "table_name": "order",
         "database_name": "pos",
-        "description": "test"
+        "description": "test",
+        "table_name": "order"
+    },
+    {
+        "database_name": "hh",
+        "description": "h",
+        "table_name": "hh"
     }
 ]
