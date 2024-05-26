@@ -5,12 +5,15 @@
     <title>Settings</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="{{ url_for('static', filename='app_icon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='table_icon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Settings</h1>
+        <div class="header">
+            <h1>Settings</h1>
+            <a href="{{ url_for('home') }}" class="home-link"><i class="fas fa-home"></i> </a>
+        </div>
         <div class="settings-container">
             <form id="settingsForm" action="{{ url_for('save_settings') }}" method="post">
                 <label for="setting1">Setting 1:</label>

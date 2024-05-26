@@ -28,7 +28,7 @@ h1 {
     font-family: 'avenir', sans-serif;
     color: #0056b3;
     font-size: 36px;
-    margin: 20 20 20 0px;
+    margin: 10 10 10 0px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -236,3 +236,31 @@ button:hover {
     color: #003366;
     text-align: left;
 }
+
+/* Add this at the end of your existing styles */
+
+.settings-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0056b3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;  /* Add this line */
+}
+
+.settings-container button i {
+    margin-right: 5px;
+}
+
+.settings-container button:hover {
+    background-color: #003366;
+}
+
+.home-link i {
+    margin-right: 10px;
+}
+

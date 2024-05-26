@@ -13,5 +13,15 @@
         "table_name": "sale",
         "database_name": "pos",
         "description": "sales"
+    },
+    {
+        "table_name": "items",
+        "database_name": "pos",
+        "description": "test"
+    },
+    {
+        "table_name": "order",
+        "database_name": "pos",
+        "description": "test"
     }
 ]
