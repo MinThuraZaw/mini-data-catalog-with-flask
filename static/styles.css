@@ -15,16 +15,31 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    text-align: center;
+    position: relative;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 h1 {
     font-family: 'avenir', sans-serif;
-    color: #000000;
+    color: #0056b3;
     font-size: 36px;
-    margin-bottom: 30px;
+    margin: 20 20 20 0px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.settings-link {
+    color: #0056b3;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.settings-link i {
+    margin-right: 10px;
 }
 
 .table-container {
@@ -118,7 +133,6 @@ button:hover {
 }
 
 .form-container {
-    font-family: 'avenir', sans-serif;
     display: flex;
     justify-content: center;
 }
@@ -221,9 +235,4 @@ button:hover {
     background: #f4faff;
     color: #003366;
     text-align: left;
-}
-
-.details-table th {
-    background-color: #0056b3;
-    color: #fff;
 }

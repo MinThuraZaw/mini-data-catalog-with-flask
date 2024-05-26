@@ -5,13 +5,15 @@
     <title>Mini Data Catalog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="{{ url_for('static', filename='app_icon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='table_icon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <div class="container">
-        <h1>Mini Data Catalog</h1>
+        <div class="header">
+            <h1>Mini Data Catalog</h1>
+            <a href="{{ url_for('settings') }}" class="settings-link"><i class="fas fa-cog"></i> </a>
+        </div>
         <div class="table-container">
             <table class="data-table">
                 <thead>

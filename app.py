@@ -47,5 +47,21 @@ def delete_table():
     return jsonify({"message": "Table deleted successfully"}), 200
 
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+
+# Add this route below the existing routes
+@app.route('/save_settings', methods=['POST'])
+def save_settings():
+    # Handle settings saving logic here
+    setting1 = request.form['setting1']
+    setting2 = request.form['setting2']
+    # Save settings logic
+    return redirect(url_for('settings'))
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
