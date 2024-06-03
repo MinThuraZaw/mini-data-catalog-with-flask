@@ -1,11 +1,18 @@
 from flask import Flask
 from blueprints.main import main_bp
 from blueprints.settings import settings_bp
+from blueprints.db import close_db
+
 
 app = Flask(__name__)
 
 app.register_blueprint(main_bp)
 app.register_blueprint(settings_bp)
+
+
+@app.teardown_appcontext
+def teardown_db(exception):
+    close_db()
 
 
 if __name__ == '__main__':

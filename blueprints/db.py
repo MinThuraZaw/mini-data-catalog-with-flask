@@ -5,10 +5,10 @@ from flask import g
 def get_db():
     if 'db' not in g:
         g.db = mysql.connector.connect(
-            host="",
-            user="",
-            password="",
-            database=""
+            host="localhost",
+            user="dev",
+            password="dev123",
+            database="data_catalog"
         )
     return g.db
 
