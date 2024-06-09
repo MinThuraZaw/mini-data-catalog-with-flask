@@ -33,6 +33,7 @@ body {
     font-family: 'avenir', sans-serif;
     font-weight: 700;
     color: #2c3e50;
+    margin: 10 10 10 0px;
 }
 
 .settings-link {
@@ -43,6 +44,7 @@ body {
 
 .table-container {
     flex: 1;
+    font-family: 'avenir', sans-serif;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -105,6 +107,7 @@ body {
 }
 
 .form-container button {
+    font-family: 'avenir', sans-serif;
     background-color: #3498db;
     color: white;
     border: none;
@@ -121,6 +124,7 @@ body {
 
 .modal {
     display: none;
+    font-family: 'avenir', sans-serif;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -133,8 +137,9 @@ body {
 
 .modal-content {
     background-color: #fefefe;
+    font-family: 'avenir', sans-serif;
     margin: 15% auto;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
@@ -149,8 +154,7 @@ body {
 
 .modal-content input, .modal-content textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -160,6 +164,7 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
+    margin: 10px 10px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
