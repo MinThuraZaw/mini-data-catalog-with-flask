@@ -1,19 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Data Catalog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='app_icon.png') }}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Mini Data Catalog</h1>
-            <a href="{{ url_for('settings.settings') }}" class="settings-link"><i class="fas fa-cog"></i> </a>
+            <a href="{{ url_for('settings.settings') }}" class="settings-link">Settings</a>
         </div>
+        {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+        {% else %}
         <div class="table-container">
             <table class="data-table">
                 <thead>
@@ -25,57 +29,56 @@
                 </thead>
                 <tbody>
                     {% for table in tables %}
-                        <tr class="table-item" data-table-name="{{ table.table_name }}" data-database-name="{{ table.database_name }}" data-description="{{ table.description }}">
-                            <td>{{ table.table_name }}</td>
-                            <td>{{ table.database_name }}</td>
-                            <td class="actions-column">
-                                <div class="dropdown">
-                                    <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="delete-btn" data-table-name="{{ table.table_name }}">Delete</a>
-                                    </div>
+                    <tr class="table-item" data-table-name="{{ table.table_name }}">
+                        <td>{{ table.table_name }}</td>
+                        <td>{{ table.database_name }}</td>
+                        <td class="actions-column">
+                            <div class="dropdown">
+                                <button class="dropbtn">⋮</button>
+                                <div class="dropdown-content">
+                                    <a href="#" class="delete-button" data-table-name="{{ table.table_name }}">Delete</a>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="form-container" style="margin-top: 20px;">
-            <button id="openAddTableModal"><i class="fas fa-plus"></i> Add Table</button>
+        {% endif %}
+        <div class="form-container">
+            <button id="openAddTableModal">Add Table</button>
         </div>
     </div>
 
-    <!-- Add Table Modal Dialog -->
     <div id="addTableModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Add New Table</h2>
-            <form id="addTableForm" action="{{ url_for('main.add_table') }}" method="post">
+            <h2>Add Table</h2>
+            <form action="{{ url_for('main.add_table') }}" method="POST">
                 <input type="text" name="table_name" placeholder="Table Name" required>
                 <input type="text" name="database_name" placeholder="Database Name" required>
-                <textarea name="description" placeholder="Description" required></textarea>
-                <button type="submit"><i class="fas fa-plus"></i> Add Table</button>
+                <textarea name="description" placeholder="Description"></textarea>
+                <button type="submit">Add Table</button>
             </form>
         </div>
     </div>
 
-    <!-- Table Details Modal Dialog -->
     <div id="tableModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Table Details</h2>
-            <table id="tableDetails" class="details-table">
+            <table class="details-table">
                 <tr>
-                    <th>Table Name:</th>
+                    <th>Table Name</th>
                     <td id="tableDetailName"></td>
                 </tr>
                 <tr>
-                    <th>Database Name:</th>
+                    <th>Database Name</th>
                     <td id="tableDetailDatabase"></td>
                 </tr>
                 <tr>
-                    <th>Description:</th>
+                    <th>Description</th>
                     <td id="tableDetailDescription"></td>
                 </tr>
             </table>

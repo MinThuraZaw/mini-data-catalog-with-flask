@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify, json
-from blueprints.db import get_db
+from .db import get_db
+from mysql.connector import Error
 
 main_bp = Blueprint('main', __name__)
 
@@ -19,13 +20,15 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def home():
-    # tables = read_tables()
-    # return render_template('home.html', tables=tables)
-    db = get_db()
-    cursor = db.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM tables")
-    tables = cursor.fetchall()
-    return render_template('home.html', tables=tables)
+    try:
+        db = get_db()
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM tables")
+        tables = cursor.fetchall()
+        return render_template('home.html', tables=tables)
+    except Error as e:
+        error_message = f"Error connecting to MySQL: {str(e)}"
+        return render_template('home.html', error=error_message)
 
 
 @main_bp.route('/add_table', methods=['POST'])
